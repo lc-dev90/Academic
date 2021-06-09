@@ -4,7 +4,7 @@ const searchInput = document.querySelector(".search-input");
 const form = document.querySelector(".search-form");
 let searchValue;
 
-// listeners
+// event listeners
 searchInput.addEventListener("input", updateInput);
 form.addEventListener("submit", (e) => {
   e.preventDefault();
