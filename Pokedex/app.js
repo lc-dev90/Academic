@@ -1,16 +1,14 @@
 const getPokemonUrl = (id) => `https://pokeapi.co/api/v2/pokemon/${id}`;
 const fetchPokemon = () => {
-  const pokemonPromises = [];
-
-  for (let i = 1; i <= 150; i++) {
-    pokemonPromises.push(
-      fetch(getPokemonUrl(i)).then((response) => response.json())
-    );
-  }
+  const generatePokemonPromises = () =>
+    Array(150)
+      .fill()
+      .map((_, index) =>
+        fetch(getPokemonUrl(index + 1)).then((response) => response.json())
+      );
+  const pokemonPromises = generatePokemonPromises();
 
   Promise.all(pokemonPromises).then((pokemons) => {
-    /* console.log(pokemons); */
-
     const lisPokemons = pokemons.reduce((acumulator, pokemon) => {
       const types = pokemon.types.map((typeInfo) => typeInfo.type.name);
 
