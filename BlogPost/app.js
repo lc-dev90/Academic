@@ -1,4 +1,5 @@
 const postsContainer = document.querySelector("#posts-container");
+const loaderContainer = document.querySelector(".loader");
 
 let page = 1;
 
@@ -29,6 +30,17 @@ const addPostsIntoDOM = async () => {
 
 addPostsIntoDOM();
 
+const removeLoader = () => {
+  setTimeout(() => {
+    loaderContainer.classList.remove("show");
+  }, 1000);
+};
+
+const showLoader = () => {
+  loaderContainer.classList.add("show");
+  removeLoader();
+};
+
 window.addEventListener("scroll", () => {
   const { clientHeight, scrollHeight, scrollTop } = document.documentElement;
   const isPageBottomAlmostReached =
@@ -36,5 +48,6 @@ window.addEventListener("scroll", () => {
 
   if (isPageBottomAlmostReached) {
     console.log("faltam 10px para a pagina acabar!");
+    showLoader();
   }
 });
