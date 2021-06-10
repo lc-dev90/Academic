@@ -5,7 +5,7 @@ let page = 1;
 
 const getPosts = async () => {
   const response = await fetch(
-    `https://jsonplaceholder.typicode.com/posts?_limit=5page=${page}`
+    `https://jsonplaceholder.typicode.com/posts?_limit=5&_page=${page}`
   );
   return response.json();
 };
@@ -30,9 +30,15 @@ const addPostsIntoDOM = async () => {
 
 addPostsIntoDOM();
 
+const getNextPosts = () => {
+  page++;
+  addPostsIntoDOM();
+};
+
 const removeLoader = () => {
   setTimeout(() => {
     loaderContainer.classList.remove("show");
+    getNextPosts();
   }, 1000);
 };
 
