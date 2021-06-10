@@ -1,3 +1,5 @@
+const postsContainer = document.querySelector("#posts-container");
+
 let page = 1;
 
 const getPosts = async () => {
@@ -9,7 +11,20 @@ const getPosts = async () => {
 
 const addPostsIntoDOM = async () => {
   const posts = await getPosts();
-  console.log(posts);
+  const postsTemplate = posts
+    .map(
+      ({ id, title, body }) => `
+  <div class="post">
+    <div class="number">${id}</div>
+    <div class="post-info">
+      <h2 class="post-title">${title}</h2>
+      <p class="post-body">${body}</p>
+    </div>
+  </div>
+  `
+    )
+    .join("");
+  postsContainer.innerHTML += postsTemplate;
 };
 
 addPostsIntoDOM();
