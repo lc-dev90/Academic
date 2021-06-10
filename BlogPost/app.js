@@ -32,8 +32,10 @@ const addPostsIntoDOM = async () => {
 addPostsIntoDOM();
 
 const getNextPosts = () => {
-  page++;
-  addPostsIntoDOM();
+  setTimeout(() => {
+    page++;
+    addPostsIntoDOM();
+  }, 300);
 };
 
 const removeLoader = () => {
