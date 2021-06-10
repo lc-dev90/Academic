@@ -28,3 +28,13 @@ const addPostsIntoDOM = async () => {
 };
 
 addPostsIntoDOM();
+
+window.addEventListener("scroll", () => {
+  const { clientHeight, scrollHeight, scrollTop } = document.documentElement;
+  const isPageBottomAlmostReached =
+    scrollTop + clientHeight >= scrollHeight - 10;
+
+  if (isPageBottomAlmostReached) {
+    console.log("faltam 10px para a pagina acabar!");
+  }
+});
