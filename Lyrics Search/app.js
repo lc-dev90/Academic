@@ -16,6 +16,15 @@ const insertSongsIntoPage = (songsInfo) => {
     `
     )
     .join("");
+  if (songsInfo.prev || songsInfo.next) {
+    prevAndNextContainer.innerHTML = `
+          ${
+            songsInfo.next
+              ? `<button class="btn" onClick="getMoreSongs('${songsInfo.next}')">Próximas</button>`
+              : ""
+          }
+        `;
+  }
 };
 
 const fetchSongs = async (term) => {
