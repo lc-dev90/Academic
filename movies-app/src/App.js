@@ -26,7 +26,6 @@ function App() {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     fetchData(SEARCH_API + searchTerm);
-
     setSearchTerm("");
   };
 
