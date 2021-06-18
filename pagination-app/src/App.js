@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="container">
       <h1 className="text-primary mb-3">My Blog</h1>
-      <Posts posts={currentPosts}></Posts>
+      <Posts posts={currentPosts} loading={loading}></Posts>
       <Pagination
         postsPerPage={postsPerPage}
         totalPosts={posts.length}

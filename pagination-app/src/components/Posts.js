@@ -1,8 +1,13 @@
 import React from "react";
+import spinner from "../imgs/spinner.gif";
 
 const Posts = ({ posts, loading }) => {
   if (loading) {
-    return <h2>Loading...</h2>;
+    return (
+      <div>
+        <img src={spinner} alt="loading..." />{" "}
+      </div>
+    );
   }
   return (
     <ul className="list-group mb-4">
