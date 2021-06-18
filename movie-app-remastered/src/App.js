@@ -1,10 +1,14 @@
+import Header from "./Components/Header/Header";
 import "./App.css";
+import SimpleBottomNavigation from "./Components/MainNav";
 
 function App() {
   return (
-    <div className="App">
-      <span className="header">Entertainment Hub</span>
-    </div>
+    <>
+      <Header />
+      <div className="app">sdsa</div>
+      <SimpleBottomNavigation />
+    </>
   );
 }
 
