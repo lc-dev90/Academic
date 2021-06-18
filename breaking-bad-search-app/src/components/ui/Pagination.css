@@ -1,0 +1,38 @@
+nav {
+  padding-top: 100px;
+  padding-bottom: 120px;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+nav ul li {
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li:hover {
+  background-color: white;
+}
+nav ul li:hover a {
+  color: black;
+}
+
+nav ul li:nth-last-of-type() {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
