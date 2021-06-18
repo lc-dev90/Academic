@@ -7,8 +7,6 @@ const FEATURED_API =
 const SEARCH_API =
   "https://api.themoviedb.org/3/search/movie?&api_key=3b48dbd14d25d9323dfacec549beb683&query=";
 
-const IMG_API = "https://image.tmdb.org/t/p/w1280";
-
 function App() {
   const [movies, setMovies] = useState([]);
 
@@ -21,7 +19,12 @@ function App() {
       });
   }, []);
 
-  return <div>{movies.length > 0 && movies.map((movie) => <Movie />)}</div>;
+  return (
+    <div className="movie-container">
+      {movies.length > 0 &&
+        movies.map((movie) => <Movie key={movie.id} {...movie} />)}
+    </div>
+  );
 }
 
 export default App;
