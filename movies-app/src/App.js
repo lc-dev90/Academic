@@ -12,23 +12,20 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch(FEATURED_API)
-      .then((responseMovies) => responseMovies.json())
-      .then((moviesJson) => {
-        console.log(moviesJson);
-        setMovies(moviesJson.results);
-      });
+    fetchData(FEATURED_API);
   }, []);
+
+  const fetchData = (url) => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setMovies(data.results);
+      });
+  };
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-
-    fetch(SEARCH_API + searchTerm)
-      .then((responseMovies) => responseMovies.json())
-      .then((moviesJson) => {
-        console.log(moviesJson);
-        setMovies(moviesJson.results);
-      });
+    fetchData(SEARCH_API + searchTerm);
 
     setSearchTerm("");
   };
