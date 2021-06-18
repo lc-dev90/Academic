@@ -5,5 +5,5 @@ This project was made with ReactJS
 ## Learned:
 
 1 - {useState, useEffect} hooks
-2 - fecthing data from API
-3 - searching
+\n2 - fecthing data from API
+\n3 - searching
