@@ -63,6 +63,17 @@ body {
   overflow: hidden;
 }
 
+.task::after {
+  content: "";
+  position: absolute;
+  background-color: green;
+  height: 100%;
+  width: 0px;
+  top: 0;
+  left: 0;
+  transition: width 200ms linear;
+}
+
 .task.reminder::after {
   content: "";
   position: absolute;
@@ -71,6 +82,7 @@ body {
   width: 5px;
   top: 0;
   left: 0;
+  transition: width 200ms linear;
 }
 
 .task h3 {
