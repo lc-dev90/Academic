@@ -1,11 +1,11 @@
 import React from "react";
 
-const Movie = ({ movie }) => {
+const Movie = ({ name, price, id }) => {
   return (
-    <div key={movie.id}>
-      <h1>{movie.name}</h1>
+    <div>
+      <h1>{name}</h1>
       <p>
-        Id: {movie.id} Price: {movie.price}
+        ID: {id} - Price: {price}
       </p>
     </div>
   );
