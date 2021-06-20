@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import MenuIcon from "@material-ui/icons/Menu";
 
 const Header = () => {
   return (
@@ -15,6 +16,7 @@ const Header = () => {
       <RightMenu>
         <a href="#">Shop</a>
         <a href="#">Tesla Account</a>
+        <MenuIcon />
       </RightMenu>
     </Container>
   );
