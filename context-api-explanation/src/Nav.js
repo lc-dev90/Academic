@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MovieContext } from "./MovieContext";
 
 const Nav = () => {
+  const [movies] = useContext(MovieContext);
   return (
     <div
       style={{
@@ -14,7 +16,7 @@ const Nav = () => {
       }}
     >
       <h3>Luiz</h3>
-      <p>List of movies: </p>
+      <p>List of movies: {movies.length}</p>
     </div>
   );
 };
