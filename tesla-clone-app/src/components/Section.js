@@ -29,7 +29,7 @@ const Container = styled.div`
   background-color: blue;
   width: 100%;
   height: 100vh;
-  background-image: ${(props) => `url('images/${props.backgroundImg}')`};
+  background-image: ${({ backgroundImg }) => `url('images/${backgroundImg}')`};
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
