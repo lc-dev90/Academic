@@ -27,6 +27,10 @@ const Header = () => {
 export default Header;
 
 const Container = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   min-height: 60px;
   align-items: center;
@@ -58,4 +62,6 @@ const MenuIconContainer = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+  animation-name: animate-down;
+  animation-duration: 10s;
 `;
