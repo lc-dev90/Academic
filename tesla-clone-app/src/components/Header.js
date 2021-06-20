@@ -16,7 +16,9 @@ const Header = () => {
       <RightMenu>
         <a href="#">Shop</a>
         <a href="#">Tesla Account</a>
-        <MenuIcon />
+        <MenuIconContainer>
+          <MenuIcon />
+        </MenuIconContainer>
       </RightMenu>
     </Container>
   );
@@ -50,3 +52,5 @@ const RightMenu = styled.div`
     padding-right: 10px;
   }
 `;
+
+const MenuIconContainer = styled.div``;
