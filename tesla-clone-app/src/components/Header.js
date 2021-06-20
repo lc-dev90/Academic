@@ -46,6 +46,7 @@ const MenuGroup = styled.div`
 
 const RightMenu = styled.div`
   display: flex;
+  align-items: center;
   a {
     font-weight: 600;
     text-transform: uppercase;
@@ -53,4 +54,8 @@ const RightMenu = styled.div`
   }
 `;
 
-const MenuIconContainer = styled.div``;
+const MenuIconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+`;
