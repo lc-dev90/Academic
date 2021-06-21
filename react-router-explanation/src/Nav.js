@@ -2,16 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
+  const navStyle = {
+    color: "white",
+    textDecoration: "none",
+  };
+
   return (
     <nav>
-      <Link to="/">
+      <Link style={navStyle} to="/">
         <h3>Logo</h3>
       </Link>
       <ul className="nav-links">
-        <Link to="/about">
+        <Link style={navStyle} to="/about">
           <li>About</li>
         </Link>
-        <Link to="/shop">
+        <Link style={navStyle} to="/shop">
           <li>Shop</li>
         </Link>
       </ul>
