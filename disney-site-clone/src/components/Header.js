@@ -42,6 +42,7 @@ const Nav = styled.nav`
   min-height: 70px;
   background: #090b13;
   display: flex;
+
   align-items: center;
   padding: 0 36px;
 `;
@@ -52,16 +53,16 @@ const Logo = styled.img`
 
 const NavMenu = styled.div`
   display: flex;
-  flex-wrap: wrap;
   flex: 1;
   margin-left: 20px;
   align-items: center;
-  overflow-x: hidden;
+  flex-wrap: wrap;
   a {
     cursor: pointer;
     display: flex;
     align-items: center;
     padding: 0 12px;
+    
     img {
       height: 20px;
     }
@@ -69,7 +70,6 @@ const NavMenu = styled.div`
       font-size: 13px;
       letter-spacing: 1.42px;
       position: relative;
-
       &::after {
         content: "";
         height: 2px;
@@ -84,9 +84,12 @@ const NavMenu = styled.div`
       }
     }
     &:hover {
-      span::after {
+      span{
+
+      &::after {
         opacity: 1;
         width: 98%;
+        position: absolute;
       }
     }
   }
