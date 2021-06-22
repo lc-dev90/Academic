@@ -39,7 +39,7 @@ const Header = () => {
 export default Header;
 
 const Nav = styled.nav`
-  height: 70px;
+  min-height: 70px;
   background: #090b13;
   display: flex;
   align-items: center;
@@ -52,9 +52,11 @@ const Logo = styled.img`
 
 const NavMenu = styled.div`
   display: flex;
+  flex-wrap: wrap;
   flex: 1;
   margin-left: 20px;
   align-items: center;
+  overflow-x: hidden;
   a {
     cursor: pointer;
     display: flex;
