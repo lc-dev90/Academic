@@ -84,7 +84,7 @@ const NavMenu = styled.div`
     &:hover {
       span::after {
         opacity: 1;
-        width: 100%;
+        width: 98%;
       }
     }
   }
