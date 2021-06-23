@@ -10,6 +10,7 @@ function App() {
 
   useEffect(() => {
     if (text) {
+      console.log(text);
       const fetchData = async () => {
         const response = await fetch(
           `https://kitsu.io/api/edge/anime?filter[text]=${text}&page[limit]=12`
@@ -20,7 +21,6 @@ function App() {
       fetchData();
     }
   }, [text]);
-  console.log(text);
   return (
     <div className="App">
       <Header>

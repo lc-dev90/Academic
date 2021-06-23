@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import useDebounce from "./useDebounce";
 
 const SearchInput = ({ value, onChange }) => {
-  return (
-    <Search
-      type="text"
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-    />
-  );
+  const [displayValue, setDisplayValue] = useState(value);
+  const debouncedChange = useDebounce(onChange, 500);
+
+  const handleChange = (e) => {
+    setDisplayValue(e.target.value);
+    debouncedChange(e.target.value);
+  };
+
+  return <Search type="text" value={displayValue} onChange={handleChange} />;
 };
 
 export default SearchInput;
