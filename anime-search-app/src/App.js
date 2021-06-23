@@ -27,6 +27,7 @@ function App() {
         <h1>Animes</h1>
         <SearchInput value={text} onChange={(e) => setText(e)} />
       </Header>
+      {text && !info.data && <Loading>Carregando...</Loading>}
       {info.data && (
         <List>
           {info.data.map((anime) => (
@@ -74,4 +75,10 @@ const List = styled.ul`
       margin-bottom: 10px;
     }
   }
+`;
+
+const Loading = styled.div`
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
 `;
