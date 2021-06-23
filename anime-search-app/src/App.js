@@ -12,7 +12,7 @@ function App() {
     if (text) {
       const fetchData = async () => {
         const response = await fetch(
-          `https://kitsu.io/api/edge/anime?filter[text]=${text}`
+          `https://kitsu.io/api/edge/anime?filter[text]=${text}&page[limit]=12`
         );
         const data = await response.json();
         setInfo(data);
@@ -64,6 +64,8 @@ const List = styled.ul`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 1.5rem;
   margin: 40px;
+  padding-top: 10px;
+  padding-bottom: 50px;
   li {
     img {
       max-width: 100%;
