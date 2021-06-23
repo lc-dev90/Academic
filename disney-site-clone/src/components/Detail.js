@@ -44,8 +44,6 @@ const Container = styled.div`
   min-height: calc(100vh - 70px);
   padding: 0 calc(3.5vw + 5px);
   position: relative;
-  background-color: #090b13;
-  z-index: -1;
 `;
 
 const Background = styled.div`
