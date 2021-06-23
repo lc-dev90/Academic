@@ -32,6 +32,8 @@ const Detail = () => {
           <img src="/images/group-icon.png" alt="" />
         </GroupWatchButton>
       </Controls>
+      <Subtitle>2018 * 7m * Family, Fantasy, Kids, Animation</Subtitle>
+      <Description>A chinese man whot dasdjsasd</Description>
     </Container>
   );
 };
@@ -125,4 +127,18 @@ const AddButton = styled.button`
 
 const GroupWatchButton = styled(AddButton)`
   background-color: rgb(0, 0, 0);
+`;
+
+const Subtitle = styled.div`
+  color: rgb(249, 249, 249);
+  font-size: 15px;
+  min-height: 20px;
+  margin-top: 26px;
+`;
+
+const Description = styled.div`
+  line-height: 1.4;
+  font-size: 20px;
+  margin-top: 16px;
+  color: rgb(249, 249, 249);
 `;
