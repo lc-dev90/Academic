@@ -58,8 +58,18 @@ const Header = styled.div`
 `;
 
 const List = styled.ul`
+  text-align: center;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 1.5rem;
+  margin: 40px;
+  li {
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+  }
 `;
