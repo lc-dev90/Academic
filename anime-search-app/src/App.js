@@ -28,11 +28,17 @@ function App() {
         <SearchInput value={text} onChange={(e) => setText(e)} />
       </Header>
       {info.data && (
-        <ul>
+        <List>
           {info.data.map((anime) => (
-            <li key={anime.id}>{anime.attributes.canonicalTitle}</li>
+            <li key={anime.id}>
+              <img
+                src={anime.attributes.posterImage.small}
+                alt={anime.attributes.canonicalTitle}
+              />
+              {anime.attributes.canonicalTitle}
+            </li>
           ))}
-        </ul>
+        </List>
       )}
     </div>
   );
@@ -49,4 +55,11 @@ const Header = styled.div`
     margin-bottom: 20px;
     letter-spacing: 1.4px;
   }
+`;
+
+const List = styled.ul`
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1.5rem;
 `;
