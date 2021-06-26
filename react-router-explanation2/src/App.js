@@ -7,7 +7,7 @@ import "./App.css";
 import Header from "./components/Header";
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="tutorial">
       <div className="App">
         <Header />
       </div>
