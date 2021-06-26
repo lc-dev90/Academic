@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Profile from "./Pages/Profile";
@@ -11,9 +11,11 @@ function App() {
       <div className="App">
         <Header />
       </div>
-      <Route path="/" component={Home} exact />
-      <Route path="/about" component={About} />
-      <Route path="/profile" component={Profile} />
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/about" component={About} />
+        <Route path="/profile" component={Profile} />
+      </Switch>
     </BrowserRouter>
   );
 }
