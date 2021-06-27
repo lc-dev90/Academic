@@ -13,6 +13,14 @@ const Products = () => {
           <Link to={`/product/${product._id}`}>
             <img src={product.src} alt={product.name} />
           </Link>
+          <div className="context">
+            <h3>
+              <Link to={`/product/${product._id}`}>{product.title}</Link>
+            </h3>
+            <span>${product.price}</span>
+            <p>{product.description}</p>
+            <button>Add to cart</button>
+          </div>
         </div>
       ))}
     </div>
