@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import { GlobalContext } from "../GlobalContext";
 
 const Products = () => {
-  const { state } = useContext(GlobalContext);
-  const { products } = state;
+  const [products] = useContext(GlobalContext);
   return (
     <Product id="product">
       {products.map((product) => (
