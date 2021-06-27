@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -7,9 +7,11 @@ import CartIcon from "./svg/shopping-cart-solid.svg";
 import CloseIcon from "./svg/times-solid.svg";
 
 const Header = () => {
+  const [toggle, setToggle] = useState(false);
+
   return (
     <HeaderContainer>
-      <div className="menu">
+      <div className="menu" onClick={() => setToggle(!toggle)}>
         <img src={MenuIcon} alt="Menu Icon" width="20"></img>
       </div>
       <Logo>
@@ -18,7 +20,7 @@ const Header = () => {
         </Link>
       </Logo>
       <nav>
-        <ul>
+        <ul className={toggle ? "toggle" : ""}>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -34,7 +36,7 @@ const Header = () => {
           <li>
             <Link to="/login">Login/Register</Link>
           </li>
-          <li className="close">
+          <li className="close" onClick={() => setToggle(!toggle)}>
             <img src={CloseIcon} alt="Close" width="20" />
           </li>
         </ul>
@@ -93,6 +95,35 @@ const HeaderContainer = styled.header`
         border-radius: 50%;
         z-index: -1;
       }
+    }
+  }
+  @media (max-width: 650px) {
+    ul {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      background: white;
+      z-index: 99;
+      opacity: 0.97;
+      transition: 0.5s linear;
+    }
+    .menu,
+    .close {
+      display: block;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+    ul.toggle {
+      top: 0;
     }
   }
 `;
