@@ -8,7 +8,7 @@ export const GlobalProvider = (props) => {
       {
         _id: "1",
         title: "Tênis Nike Air VaporMax",
-        src: "https://images.lojanike.com.br/500x500/produto/tenis-nike-air-vapormax-evo-masculino-CT2868-001-3.jpg",
+        src: "https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-vapormax-evo-masculino-CT2868-001-1.jpg",
         description: "Tênis Nike Air VaporMax Evo Masculino",
         content:
           "O Nike Air VaporMax Evo disseca o DNA do Air Max para revelar as características distintivas de 7 ícones da Nike. Ele combina elementos de queridinhos do panteão do Air em um só tênis, permitindo que você explore um novo mundo repleto de história, inovação e Air Max.",
