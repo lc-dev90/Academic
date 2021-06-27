@@ -8,10 +8,10 @@ import CloseIcon from "./svg/times-solid.svg";
 
 const Header = () => {
   return (
-    <header>
-      <Menu>
+    <HeaderContainer>
+      <div className="menu">
         <img src={MenuIcon} alt="Menu Icon" width="20"></img>
-      </Menu>
+      </div>
       <Logo>
         <Link to="/">
           <h1>Nike</h1>
@@ -23,16 +23,16 @@ const Header = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/">Product</Link>
+            <Link to="/product">Product</Link>
           </li>
           <li>
-            <Link to="/">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="/">About</Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/">Login/Register</Link>
+            <Link to="/login">Login/Register</Link>
           </li>
           <li className="close">
             <img src={CloseIcon} alt="Close" width="20" />
@@ -40,14 +40,67 @@ const Header = () => {
         </ul>
         <div className="nav-cart">
           <span>0</span>
-          <img src={CartIcon} alt="Cart" width="20" />
+          <Link to="/cart">
+            <img src={CartIcon} alt="Cart" width="20" />
+          </Link>
         </div>
       </nav>
-    </header>
+    </HeaderContainer>
   );
 };
 
 export default Header;
 
-const Menu = styled.div``;
-const Logo = styled.div``;
+const HeaderContainer = styled.header`
+  min-height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  .menu,
+  .close {
+    cursor: pointer;
+    display: none;
+  }
+  nav {
+    display: flex;
+    ul {
+      li {
+        list-style: none;
+        display: inline-block;
+        a {
+          text-decoration: none;
+          text-transform: uppercase;
+          color: #555;
+          padding: 0 15px;
+          &:hover {
+            color: lightseagreen;
+          }
+        }
+      }
+    }
+    .nav-cart {
+      cursor: pointer;
+      position: relative;
+      span {
+        position: absolute;
+        top: -12px;
+        right: -7px;
+        background: crimson;
+        font-size: 10px;
+        color: white;
+        padding: 3px 5px;
+        border-radius: 50%;
+        z-index: -1;
+      }
+    }
+  }
+`;
+
+const Logo = styled.div`
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+  }
+`;
