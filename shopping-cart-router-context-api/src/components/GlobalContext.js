@@ -8,7 +8,7 @@ export const GlobalProvider = (props) => {
       {
         _id: "1",
         title: "Nike Shoes 01",
-        src: "https://www.upsieutoc.com/images/2020/06/27/img1.jpg",
+        src: "https://images.lojanike.com.br/500x500/produto/tenis-nike-air-vapormax-evo-masculino-CT2868-001-3.jpg",
         description: "UI/UX designing, html css tutorials",
         content:
           "Welcome to our channel Dev AT. Here you can learn web designing, UI/UX designing, html css tutorials, css animations and css effects, javascript and jquery tutorials and related so on.",
@@ -19,7 +19,7 @@ export const GlobalProvider = (props) => {
       {
         _id: "2",
         title: "Nike Shoes 02",
-        src: "https://www.upsieutoc.com/images/2020/06/27/img2.jpg",
+        src: "https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-max-2090-masculino-CV8835-100-1.jpg",
         description: "UI/UX designing, html css tutorials",
         content:
           "Welcome to our channel Dev AT. Here you can learn web designing, UI/UX designing, html css tutorials, css animations and css effects, javascript and jquery tutorials and related so on.",
@@ -30,7 +30,7 @@ export const GlobalProvider = (props) => {
       {
         _id: "3",
         title: "Nike Shoes 03",
-        src: "https://www.upsieutoc.com/images/2020/06/27/img3.jpg",
+        src: "https://images.lojanike.com.br/1024x1024/produto/tenis-nike-lebron-17-unissex-BQ3177-601-1.jpg",
         description: "UI/UX designing, html css tutorials",
         content:
           "Welcome to our channel Dev AT. Here you can learn web designing, UI/UX designing, html css tutorials, css animations and css effects, javascript and jquery tutorials and related so on.",
@@ -41,7 +41,7 @@ export const GlobalProvider = (props) => {
       {
         _id: "4",
         title: "Nike Shoes 04",
-        src: "https://www.upsieutoc.com/images/2020/06/27/img4.jpg",
+        src: "https://images.lojanike.com.br/1024x1024/produto/tenis-air-jordan-xxxv-low-CW2460-101-1.jpg",
         description: "UI/UX designing, html css tutorials",
         content:
           "Welcome to our channel Dev AT. Here you can learn web designing, UI/UX designing, html css tutorials, css animations and css effects, javascript and jquery tutorials and related so on.",
@@ -52,7 +52,7 @@ export const GlobalProvider = (props) => {
       {
         _id: "5",
         title: "Nike Shoes 05",
-        src: "https://www.upsieutoc.com/images/2020/06/27/img5.jpg",
+        src: "https://images.lojanike.com.br/1024x1024/produto/tenis-lebron-xviii-best-of-DM2813-400-1.jpg",
         description: "UI/UX designing, html css tutorials",
         content:
           "Welcome to our channel Dev AT. Here you can learn web designing, UI/UX designing, html css tutorials, css animations and css effects, javascript and jquery tutorials and related so on.",
@@ -63,7 +63,7 @@ export const GlobalProvider = (props) => {
       {
         _id: "6",
         title: "Nike Shoes 06",
-        src: "https://www.upsieutoc.com/images/2020/06/27/img6.jpg",
+        src: "https://images.lojanike.com.br/1024x1024/produto/tenis-nike-precision-iii-unissex-AQ7495-002-1.jpg",
         description: "UI/UX designing, html css tutorials",
         content:
           "Welcome to our channel Dev AT. Here you can learn web designing, UI/UX designing, html css tutorials, css animations and css effects, javascript and jquery tutorials and related so on.",

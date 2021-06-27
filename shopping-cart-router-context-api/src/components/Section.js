@@ -1,11 +1,17 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
-import { GlobalContext } from "./GlobalContext";
+import { Route } from "react-router-dom";
+
+import Products from "./section/Products";
+import Details from "./section/Details";
 
 const Section = () => {
-  const { state } = useContext(GlobalContext);
-  console.log(state);
-  return <SectionContainer>Section</SectionContainer>;
+  return (
+    <SectionContainer>
+      <Route path="/product" component={Products} exact></Route>
+      <Route path="/product/:id" component={Details}></Route>
+    </SectionContainer>
+  );
 };
 
 export default Section;
