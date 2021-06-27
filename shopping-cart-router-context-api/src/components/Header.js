@@ -111,7 +111,7 @@ const HeaderContainer = styled.header`
       background: white;
       z-index: 99;
       opacity: 0.97;
-      transition: 0.5s linear;
+      transition: 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     .menu,
     .close {

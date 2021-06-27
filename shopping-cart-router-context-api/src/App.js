@@ -1,17 +1,20 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import styled from "styled-components";
+import { GlobalProvider } from "./components/GlobalContext";
 
 import Header from "./components/Header";
 import Section from "./components/Section";
 
 function App() {
   return (
-    <Container>
-      <Router>
-        <Header />
-        <Section />
-      </Router>
-    </Container>
+    <GlobalProvider>
+      <Container>
+        <Router>
+          <Header />
+          <Section />
+        </Router>
+      </Container>
+    </GlobalProvider>
   );
 }
 
