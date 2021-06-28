@@ -36,7 +36,6 @@ export default Searchbar;
 
 const Search = styled.div`
   margin: 50px auto;
-  max-width: 60%;
   form {
     position: relative;
     input {
