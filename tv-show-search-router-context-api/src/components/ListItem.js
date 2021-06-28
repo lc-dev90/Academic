@@ -7,7 +7,7 @@ const ListItem = ({ image, name, rating, id }) => {
     <Link to={`/details/${id}`}>
       <Item>
         <img src={image} alt={name} />
-        <div className="info">
+        <div className="information">
           <h4>{name}</h4>
           <h4>{rating}</h4>
         </div>

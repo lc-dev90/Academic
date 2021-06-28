@@ -8,17 +8,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.alert-warning {
+.warning {
   background: #f8ffc4;
   border: 1px solid #ffee00;
 }
 
-.alert-danger {
+.danger {
   background: #ffc4c4;
   border: 1px solid #ff0000;
 }
 
-.alert-info {
+.info {
   background: #d7eafe;
   border: 1px solid #0523b7;
 }

@@ -5,10 +5,13 @@ import App from "./App";
 
 //State
 import ShowsState from "./context/shows/ShowsState";
+import AlertsState from "./context/alerts/AlertsState";
 
 ReactDOM.render(
   <ShowsState>
-    <App />
+    <AlertsState>
+      <App />
+    </AlertsState>
   </ShowsState>,
 
   document.getElementById("root")

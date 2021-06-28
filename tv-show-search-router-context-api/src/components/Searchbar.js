@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 // Context
 import ShowsContext from "../context/shows/showsContext";
+import AlertsContext from "../context/alerts/alertsContext";
 
 //Components
 import Alert from "./Alert";
@@ -10,16 +11,21 @@ import Alert from "./Alert";
 const Searchbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const { searchShows } = useContext(ShowsContext);
+  const { alert, setAlert } = useContext(AlertsContext);
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    searchShows(searchTerm);
+    if (searchTerm === "") {
+      setAlert("Please enter some TV show", "danger");
+    } else {
+      searchShows(searchTerm);
+    }
   };
 
   return (
     <Search>
+      {alert ? <Alert message={alert.message} type={alert.type} /> : null}
       <form onSubmit={handleSubmitForm}>
-        <Alert message="Please, enter something" type="alert-danger" />
         <input
           type="text"
           placeholder="Search for Tv Show"
