@@ -1,7 +1,10 @@
 import React, { useEffect, useContext } from "react";
-import styled from "styled-components";
-import defaultImg from "../images/no-image-available-grid.jpg";
 import { Link, useHistory } from "react-router-dom";
+import styled from "styled-components";
+
+//Components
+import defaultImg from "../images/no-image-available-grid.jpg";
+import Loader from "../components/Loader";
 
 //Contect
 import ShowsContext from "../context/shows/showsContext";
@@ -25,7 +28,7 @@ const DetailsPage = ({ match }) => {
   return (
     <>
       {loading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : (
         <>
           <Details>

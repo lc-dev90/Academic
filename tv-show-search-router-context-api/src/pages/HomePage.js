@@ -8,6 +8,7 @@ import ShowsContext from "../context/shows/showsContext";
 import Searchbar from "../components/Searchbar";
 import ListItem from "../components/ListItem";
 import defaultImage from "../images/no-image-available-grid.jpg";
+import Loader from "../components/Loader";
 
 const HomePage = () => {
   const showsContext = useContext(ShowsContext);
@@ -16,24 +17,28 @@ const HomePage = () => {
     <Home>
       <Searchbar />
       {loading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : (
         <div className="homepage-list">
-          {shows.map((item) => (
-            <ListItem
-              key={item.show.id}
-              id={item.show.id}
-              image={item.show.image ? item.show.image.medium : defaultImage}
-              name={item.show.name}
-              rating={
-                item.show.rating.average
-                  ? item.show.rating.average
-                  : "No rating"
-              }
-            >
-              {item.show.name}
-            </ListItem>
-          ))}
+          {shows.length === 0 ? (
+            <h1 className="no-results">Sorry, no results.</h1>
+          ) : (
+            shows.map((item) => (
+              <ListItem
+                key={item.show.id}
+                id={item.show.id}
+                image={item.show.image ? item.show.image.medium : defaultImage}
+                name={item.show.name}
+                rating={
+                  item.show.rating.average
+                    ? item.show.rating.average
+                    : "No rating"
+                }
+              >
+                {item.show.name}
+              </ListItem>
+            ))
+          )}
         </div>
       )}
     </Home>
@@ -46,5 +51,8 @@ const Home = styled.div`
   .homepage-list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+  }
+  .no-results {
+    position: absolute;
   }
 `;
