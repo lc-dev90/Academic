@@ -1,4 +1,9 @@
-import { SEARCH_SHOWS, SET_LOADING } from "../types";
+import {
+  SEARCH_SHOWS,
+  SET_LOADING,
+  SET_SINGLE_SHOW,
+  CLEAR_SINGLE_SHOW,
+} from "../types";
 
 const showsReducer = (state, action) => {
   switch (action.type) {
@@ -11,6 +16,17 @@ const showsReducer = (state, action) => {
       return {
         ...state,
         shows: action.payload,
+        loading: false,
+      };
+    case CLEAR_SINGLE_SHOW:
+      return {
+        ...state,
+        singleShow: {},
+      };
+    case SET_SINGLE_SHOW:
+      return {
+        ...state,
+        singleShow: action.payload,
         loading: false,
       };
     default:
