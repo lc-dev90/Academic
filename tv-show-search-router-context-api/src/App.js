@@ -2,6 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+//Pages
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import DetailsPage from "./pages/DetailsPage";
+
 //Components
 import Navbar from "./components/Navbar";
 
@@ -11,9 +16,9 @@ const App = () => {
       <Navbar />
       <Container>
         <Switch>
-          {/* Homepage Route */}
-          {/* About page Route */}
-          {/* Single show details page Route */}
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/about" component={AboutPage} />
+          <Route path="/details/:id" component={DetailsPage} />
         </Switch>
       </Container>
     </Router>
