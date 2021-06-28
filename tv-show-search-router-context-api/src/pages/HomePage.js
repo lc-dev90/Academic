@@ -1,8 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
+//Components
+import Searchbar from "../components/Searchbar";
+
 const HomePage = () => {
-  return <Home>This is my homepage</Home>;
+  return (
+    <Home>
+      <Searchbar />
+    </Home>
+  );
 };
 
 export default HomePage;

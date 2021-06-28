@@ -29,35 +29,40 @@ const Navbar = () => {
 export default Navbar;
 
 const Nav = styled.div`
-  height: 80px;
-  background-color: black;
+  padding: 1.5rem;
+  background-color: #171717;
   .container {
     max-width: 1170px;
     margin: 0 auto;
-    height: 100%;
     nav {
       display: flex;
       align-items: center;
-      height: 100%;
       justify-content: space-between;
       h3 {
         a {
-          color: white;
+          color: #f4f4f4;
           text-decoration: none;
           i {
             margin-right: 10px;
+          }
+          :hover {
+            color: #d1d1d1;
           }
         }
       }
       ul {
         display: flex;
+        list-style: none;
         li {
           margin-left: 30px;
           a {
             text-decoration: none;
             text-transform: uppercase;
-            color: white;
+            color: #f4f4f4;
             font-weight: bolder;
+            :hover {
+              color: #d1d1d1;
+            }
           }
         }
       }
