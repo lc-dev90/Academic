@@ -32,7 +32,7 @@ const Nav = styled.div`
   padding: 1.5rem;
   background-color: #171717;
   .container {
-    max-width: 1170px;
+    max-width: 1024px;
     margin: 0 auto;
     nav {
       display: flex;

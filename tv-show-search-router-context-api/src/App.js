@@ -2,13 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+//Components
+import Navbar from "./components/Navbar";
+
 //Pages
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import DetailsPage from "./pages/DetailsPage";
 
-//Components
-import Navbar from "./components/Navbar";
+//State
 
 const App = () => {
   return (
@@ -28,6 +30,6 @@ const App = () => {
 export default App;
 
 const Container = styled.div`
-  max-width: 1170px;
+  max-width: 1024px;
   margin: 0 auto;
 `;

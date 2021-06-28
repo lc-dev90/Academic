@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
+
+// Context
+import ShowsContext from "../context/shows/showsContext";
 
 //Components
 import Alert from "./Alert";
 
 const Searchbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const { searchShows } = useContext(ShowsContext);
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
+    searchShows(searchTerm);
   };
 
   return (
@@ -30,7 +35,8 @@ const Searchbar = () => {
 export default Searchbar;
 
 const Search = styled.div`
-  margin: 50px 0;
+  margin: 50px auto;
+  max-width: 60%;
   form {
     position: relative;
     input {
