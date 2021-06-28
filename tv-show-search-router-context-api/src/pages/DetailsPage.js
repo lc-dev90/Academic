@@ -93,11 +93,31 @@ const Button = styled.button`
   font-size: 0.7rem;
   text-transform: uppercase;
   cursor: pointer;
+  @media (max-width: 700px) {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
 `;
 
 const Details = styled.div`
   display: flex;
   margin: 2rem 0;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 400px;
+
+      max-width: 90%;
+    }
+    .details-info {
+      width: 400px;
+      max-width: 90%;
+      margin-top: 20px;
+    }
+  }
   img {
     margin-right: 2rem;
   }

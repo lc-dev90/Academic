@@ -50,7 +50,9 @@ export default HomePage;
 const Home = styled.div`
   .homepage-list {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+
+    text-align: center;
   }
   .no-results {
     position: absolute;
