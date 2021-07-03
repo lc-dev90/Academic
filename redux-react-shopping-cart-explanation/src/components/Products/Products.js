@@ -8,8 +8,8 @@ import Product from "./Product/Product";
 const Products = ({ products }) => {
   return (
     <div className={styles.products}>
-      {products.map((product) => (
-        <Product />
+      {products.map((prod) => (
+        <Product key={prod.id} productData={prod} />
       ))}
     </div>
   );
