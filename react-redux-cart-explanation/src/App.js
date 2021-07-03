@@ -9,9 +9,11 @@ const App = () => {
     <div className="App">
       <Router>
         <Header />
-        <Route path="/" exact component={ProductListing} />
-        <Route path="/product/:productId" exact component={ProductDetail} />
-        <Route>404 not Found!</Route>
+        <Switch>
+          <Route path="/" exact component={ProductListing} />
+          <Route path="/product/:productId" exact component={ProductDetail} />
+          <Route>404 not Found!</Route>
+        </Switch>
       </Router>
     </div>
   );
