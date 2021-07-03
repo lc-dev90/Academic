@@ -3,14 +3,18 @@ import "./App.css";
 
 import ProductsList from "./Products/ProductsList";
 import ProductForm from "./Products/ProductForm";
+import store from "./store";
+import { Provider } from "react-redux";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <ProductsList />
-      <ProductForm />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <ProductsList />
+        <ProductForm />
+      </div>
+    </Provider>
   );
-}
+};
 
 export default App;

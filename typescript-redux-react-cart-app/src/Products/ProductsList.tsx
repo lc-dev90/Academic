@@ -1,21 +1,11 @@
 import React, { useState } from "react";
+import { getProductsSelector } from "./products.slice";
+import { useSelector } from "react-redux";
 
 interface ProductsListProps {}
 
-const initialProducts = [
-  { title: "Escape from Tarkov", price: 60, id: "eft" },
-  { title: "Hunt: Showdown", price: 70, id: "hunt" },
-  { title: "Hell the lose", price: 55, id: "h11" },
-];
-
-interface Product {
-  title: string;
-  price: number;
-  id: string;
-}
-
 const ProductsList: React.FC<ProductsListProps> = ({}) => {
-  const [products, setProducts] = useState<Product[]>(initialProducts);
+  const products = useSelector(getProductsSelector);
   return (
     <div>
       <h1>Games List</h1>
@@ -26,20 +16,6 @@ const ProductsList: React.FC<ProductsListProps> = ({}) => {
           </span>
         </div>
       ))}
-      <button
-        onClick={() =>
-          setProducts((prevProducts) => [
-            ...prevProducts,
-            {
-              title: "Halo",
-              price: 100,
-              id: "h1",
-            },
-          ])
-        }
-      >
-        Add Product
-      </button>
     </div>
   );
 };
