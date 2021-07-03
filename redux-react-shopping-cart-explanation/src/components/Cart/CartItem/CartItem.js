@@ -2,9 +2,18 @@ import React, { useState } from "react";
 import styles from "./CartItem.module.css";
 
 import { connect } from "react-redux";
-import { removeFromCart } from "../../../redux/Shopping/shopping-actions";
+import {
+  removeFromCart,
+  adjustQty,
+} from "../../../redux/Shopping/shopping-actions";
 
-const CartItem = ({ itemData, removeFromCart }) => {
+const CartItem = ({ itemData, removeFromCart, adjustQty }) => {
+  const [input, setInput] = useState(itemData.qty);
+
+  const onChangeHandler = (e) => {
+    setInput(e.target.value);
+    adjustQty(itemData.id, e.target.value);
+  };
   return (
     <div className={styles.cartItem}>
       <img
@@ -25,7 +34,8 @@ const CartItem = ({ itemData, removeFromCart }) => {
             type="number"
             id="qty"
             name="qty"
-            value={itemData.qty}
+            value={input}
+            onChange={onChangeHandler}
           />
         </div>
         <button
@@ -45,6 +55,7 @@ const CartItem = ({ itemData, removeFromCart }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     removeFromCart: (id) => dispatch(removeFromCart(id)),
+    adjustQty: (id, value) => dispatch(adjustQty(id, value)),
   };
 };
 
