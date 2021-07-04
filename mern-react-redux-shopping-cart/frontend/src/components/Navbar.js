@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ setSideToggle }) => {
   return (
     <Nav>
       <div className="navbar__logo">
@@ -21,7 +21,10 @@ const Navbar = () => {
           <Link to="/">Shop</Link>
         </li>
       </ul>
-      <div className="hamburguer__menu">
+      <div
+        className="hamburguer__menu"
+        onClick={() => setSideToggle((prevState) => !prevState)}
+      >
         <div></div>
         <div></div>
         <div></div>
