@@ -30,4 +30,21 @@ const Home = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
+  @media (max-width: 1232px) {
+    .products {
+      grid-template-columns: repeat(3, auto);
+    }
+  }
+
+  @media (max-width: 950px) {
+    .products {
+      grid-template-columns: repeat(2, auto);
+    }
+  }
+
+  @media (max-width: 630px) {
+    .products {
+      grid-template-columns: 1fr;
+    }
+  }
 `;
