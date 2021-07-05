@@ -10,6 +10,16 @@ const HomeScreen = () => {
       <h2>Latest product</h2>
       <div className="products">
         <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
       </div>
     </Home>
   );
