@@ -22,7 +22,7 @@ const CartItem = () => {
         <option value="3">3</option>
         <option value="4">4</option>
       </select>
-      <button className="delete-btn">
+      <button>
         <i className="fas fa-trash"></i>
       </button>
     </CartItemContainer>
@@ -31,4 +31,72 @@ const CartItem = () => {
 
 export default CartItem;
 
-const CartItemContainer = styled.div``;
+const CartItemContainer = styled.div`
+  width: 100%;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr 1fr 1fr;
+  gap: 8px;
+  background: #fff;
+  border-radius: 2px;
+  place-items: center;
+  margin-bottom: 8px;
+
+  .cart-item-name {
+    text-decoration: none;
+    color: #171717;
+    &:hover {
+      color: #dd219e;
+    }
+  }
+
+  select {
+    padding: 10px 17px;
+  }
+
+  button {
+    padding: 10px 17px;
+    color: red;
+    background: #f4f4f4;
+    border: 1px solid #171717;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: #171717;
+      transform: scale(1.2);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .cart-item-name {
+      font-size: 0.8rem;
+    }
+
+    select,
+    button {
+      padding: 8px 13px;
+    }
+
+    .price {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .cart-item-name {
+      font-size: 0.6rem;
+    }
+
+    select,
+    button {
+      padding: 5px 8px;
+    }
+
+    .price {
+      font-size: 0.6rem;
+    }
+  }
+`;
