@@ -18,7 +18,7 @@ const App = () => {
     <Router>
       <div className="App">
         <Navbar setSideToggle={setSideToggle} />
-        <SideDrawer show={sideToggle} />
+        <SideDrawer show={sideToggle} setSideToggle={setSideToggle} />
         <Backdrop show={sideToggle} setSideToggle={setSideToggle} />
         <main>
           <Switch>
