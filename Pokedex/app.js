@@ -1,33 +1,32 @@
-const getPokemonUrl = (id) => `https://pokeapi.co/api/v2/pokemon/${id}`;
-const generatePokemonPromises = () =>
-  Array(150)
-    .fill()
-    .map((_, index) =>
-      fetch(getPokemonUrl(index + 1)).then((response) => response.json())
-    );
+const getPokemonURL = (id) => `https://pokeapi.co/api/v2/pokemon/${id}`;
 
 const fetchPokemon = () => {
-  const pokemonPromises = generatePokemonPromises();
+  const pokemonPromises = [];
+
+  for (let i = 1; i <= 150; i++) {
+    pokemonPromises.push(
+      fetch(getPokemonURL(i)).then((response) => response.json())
+    );
+  }
 
   Promise.all(pokemonPromises).then((pokemons) => {
-    const lisPokemons = pokemons.reduce((acumulator, pokemon) => {
+    console.log(pokemons);
+
+    const lisPokemons = pokemons.reduce((accumulator, pokemon) => {
       const types = pokemon.types.map((typeInfo) => typeInfo.type.name);
 
-      acumulator += `
-      <li class="card ${types[0]}">
-      <img class="card-image" alt="${
-        pokemon.name
-      }" src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png">
-        <h2 class="card-title">${pokemon.id}. ${pokemon.name}</h2>
-        <p class="card-subtitle">${pokemon.types
-          .map((typeInfo) => typeInfo.type.name)
-          .join(" | ")}</p>
-      </li>`;
-      return acumulator;
+      accumulator += `
+        <li class="card ${types[0]}">
+          <img class="card-image" src="https://pokeres.bastionbot.org/images/pokemon/${
+            pokemon.id
+          }.png" alt="${pokemon.name}"/>
+          <h2 class="card-title">${pokemon.id}. - ${pokemon.name}</h2>
+          <p class="card-subtitle">${types.join(" | ")}</p>
+        </li>
+      `;
+      return accumulator;
     }, "");
-
-    const ul = document.querySelector('[data-js="pokedex"]');
-
+    const ul = document.querySelector("[data-js='pokedex']");
     ul.innerHTML = lisPokemons;
   });
 };
