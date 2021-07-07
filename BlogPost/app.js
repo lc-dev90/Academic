@@ -61,7 +61,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-filterInput.addEventListener("input", (event) => {
+const handleInputValue = (event) => {
   const inputValue = event.target.value.toLowerCase();
   const posts = document.querySelectorAll(".post");
 
@@ -78,4 +78,6 @@ filterInput.addEventListener("input", (event) => {
 
     post.style.display = "none";
   });
-});
+};
+
+filterInput.addEventListener("input", handleInputValue);
