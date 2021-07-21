@@ -1,29 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ListGroup, ListGroupItem, Button } from "reactstrap";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteItem } from "../redux/actions/itemActions";
+import { deleteItem, getItems } from "../redux/actions/itemActions";
 
 const ShoppingList = () => {
   const allProducts = useSelector((state) => state.item);
-  const { products } = allProducts;
+  const { items } = allProducts;
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getItems());
+  }, []);
 
   return (
     <ListGroup>
       <TransitionGroup className="shopping-list">
-        {products.map((product) => (
-          <CSSTransition key={product.id} timeout={500} classNames="fade">
+        {items.map((item) => (
+          <CSSTransition key={item._id} timeout={500} classNames="fade">
             <ListGroupItem>
               <Button
                 className="remove-btn"
                 color="danger"
                 size="sm"
-                onClick={() => dispatch(deleteItem(product.id))}
+                onClick={() => dispatch(deleteItem(item._id))}
               >
                 &times;
               </Button>
-              {product.name}
+              {item.name}
             </ListGroupItem>
           </CSSTransition>
         ))}

@@ -11,7 +11,7 @@ import {
   Input,
 } from "reactstrap";
 import { addItem } from "../redux/actions/itemActions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const ItemModal = () => {
   const [modal, setModal] = useState(false);
@@ -54,6 +54,9 @@ const ItemModal = () => {
                 placeholder="Add Shopping Item"
                 onChange={inputHandler}
               />
+              <Button color="dark" style={{ marginTop: "1rem" }}>
+                Ok
+              </Button>
             </FormGroup>
           </Form>
         </ModalBody>

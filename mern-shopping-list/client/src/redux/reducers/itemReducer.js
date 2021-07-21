@@ -1,13 +1,13 @@
-import { v4 as uuidv4 } from "uuid";
-import { GET_ITEMS, DELETE_ITEM, ADD_ITEM } from "../constants/types";
+import {
+  GET_ITEMS,
+  DELETE_ITEM,
+  ADD_ITEM,
+  ITEMS_LOADING,
+} from "../constants/types";
 
 const initialState = {
-  products: [
-    { id: uuidv4(), name: "Eggs" },
-    { id: uuidv4(), name: "Gasoline" },
-    { id: uuidv4(), name: "Tomatoe" },
-    { id: uuidv4(), name: "Milk" },
-  ],
+  items: [],
+  loading: false,
 };
 
 export const itemReducer = (state = initialState, action) => {
@@ -15,18 +15,23 @@ export const itemReducer = (state = initialState, action) => {
     case GET_ITEMS:
       return {
         ...state,
+        items: action.payload,
+        loading: false,
       };
     case ADD_ITEM:
       return {
         ...state,
-        products: [...state.products, { id: uuidv4(), name: action.payload }],
+        items: [action.payload, ...state.items],
       };
     case DELETE_ITEM:
       return {
         ...state,
-        products: state.products.filter(
-          (product) => product.id !== action.payload
-        ),
+        items: state.items.filter((item) => item._id !== action.payload),
+      };
+    case ITEMS_LOADING:
+      return {
+        ...state,
+        loading: true,
       };
     default:
       return state;
