@@ -1,58 +1,34 @@
-import React, { useState } from "react";
-import { Container, ListGroup, ListGroupItem, Button } from "reactstrap";
-import {
-  CSSTransition,
-  Transition,
-  TransitionGroup,
-} from "react-transition-group";
-import { v4 as uuidv4 } from "uuid";
+import React from "react";
+import { ListGroup, ListGroupItem, Button } from "reactstrap";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteItem } from "../redux/actions/itemActions";
 
 const ShoppingList = () => {
-  const [products, setProducts] = useState([
-    { id: uuidv4(), name: "Eggs" },
-    { id: uuidv4(), name: "Gasoline" },
-    { id: uuidv4(), name: "Tomatoe" },
-    { id: uuidv4(), name: "Milk" },
-  ]);
-  console.log(products);
+  const allProducts = useSelector((state) => state.item);
+  const { products } = allProducts;
+  const dispatch = useDispatch();
+
   return (
-    <Container>
-      <Button
-        color="dark"
-        style={{ marginBottom: "2rem" }}
-        onClick={() => {
-          const name = prompt("Enter item name: ");
-          if (name) {
-            setProducts((prevState) => [...prevState, { id: uuidv4(), name }]);
-          }
-        }}
-      >
-        Add Item
-      </Button>
-      <ListGroup>
-        <TransitionGroup className="shopping-list">
-          {products.map((product) => (
-            <CSSTransition key={product.id} timeout={500} classNames="fade">
-              <ListGroupItem>
-                <Button
-                  className="remove-btn"
-                  color="danger"
-                  size="sm"
-                  onClick={() => {
-                    setProducts((prevState) => [
-                      ...prevState.filter((item) => item.id !== product.id),
-                    ]);
-                  }}
-                >
-                  &times;
-                </Button>
-                {product.name}
-              </ListGroupItem>
-            </CSSTransition>
-          ))}
-        </TransitionGroup>
-      </ListGroup>
-    </Container>
+    <ListGroup>
+      <TransitionGroup className="shopping-list">
+        {products.map((product) => (
+          <CSSTransition key={product.id} timeout={500} classNames="fade">
+            <ListGroupItem>
+              <Button
+                className="remove-btn"
+                color="danger"
+                size="sm"
+                onClick={() => dispatch(deleteItem(product.id))}
+              >
+                &times;
+              </Button>
+              {product.name}
+            </ListGroupItem>
+          </CSSTransition>
+        ))}
+      </TransitionGroup>
+    </ListGroup>
   );
 };
 
